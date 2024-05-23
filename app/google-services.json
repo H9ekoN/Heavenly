@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "690833171833",
+    "firebase_url": "https://heavenly-f9dce-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "heavenly-f9dce",
+    "storage_bucket": "heavenly-f9dce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690833171833:android:f303d8939a7cb1f5f1bba8",
+        "android_client_info": {
+          "package_name": "com.google.firebase.heavenly"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNDemSjRgVZp5Dmf1hQ2Io72ohLU3Z-IU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
