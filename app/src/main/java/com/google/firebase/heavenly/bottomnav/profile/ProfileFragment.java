@@ -229,37 +229,39 @@ public class ProfileFragment extends Fragment {
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String login = snapshot.child("login").getValue().toString();
-                        String profileImage = snapshot.child("profileImage").getValue().toString();
+                        if (snapshot.child("login").getValue() != null) {
+                            String login = snapshot.child("login").getValue().toString();
+                            String profileImage = snapshot.child("profileImage").getValue().toString();
 
-                        String landscapeImage = Objects.requireNonNull(snapshot.child("landscapeImage").getValue()).toString();
-                        String foodImage = Objects.requireNonNull(snapshot.child("foodImage").getValue()).toString();
-                        String architectureImage = Objects.requireNonNull(snapshot.child("architectureImage").getValue()).toString();
-                        String otherImage = Objects.requireNonNull(snapshot.child("otherImage").getValue()).toString();
-                        String animalsImage = Objects.requireNonNull(snapshot.child("animalsImage").getValue()).toString();
-                        String lifestyleImage = Objects.requireNonNull(snapshot.child("lifestyleImage").getValue()).toString();
-                        if(!landscapeImage.isEmpty()){
-                            Glide.with(getContext()).load(landscapeImage).into(binding.landscape);
+                            String landscapeImage = Objects.requireNonNull(snapshot.child("landscapeImage").getValue()).toString();
+                            String foodImage = Objects.requireNonNull(snapshot.child("foodImage").getValue()).toString();
+                            String architectureImage = Objects.requireNonNull(snapshot.child("architectureImage").getValue()).toString();
+                            String otherImage = Objects.requireNonNull(snapshot.child("otherImage").getValue()).toString();
+                            String animalsImage = Objects.requireNonNull(snapshot.child("animalsImage").getValue()).toString();
+                            String lifestyleImage = Objects.requireNonNull(snapshot.child("lifestyleImage").getValue()).toString();
+                            if (!landscapeImage.isEmpty()) {
+                                Glide.with(getContext()).load(landscapeImage).into(binding.landscape);
+                            }
+                            if (!foodImage.isEmpty()) {
+                                Glide.with(getContext()).load(foodImage).into(binding.food);
+                            }
+                            if (!architectureImage.isEmpty()) {
+                                Glide.with(getContext()).load(architectureImage).into(binding.architecture);
+                            }
+                            if (!otherImage.isEmpty()) {
+                                Glide.with(getContext()).load(otherImage).into(binding.other);
+                            }
+                            if (!animalsImage.isEmpty()) {
+                                Glide.with(getContext()).load(animalsImage).into(binding.animals);
+                            }
+                            if (!lifestyleImage.isEmpty()) {
+                                Glide.with(getContext()).load(lifestyleImage).into(binding.lifestyle);
+                            }
+                            if (!profileImage.isEmpty()) {
+                                Glide.with(getContext()).load(profileImage).into(binding.profileImageView);
+                            }
+                            binding.login.setText(login);
                         }
-                        if(!foodImage.isEmpty()){
-                            Glide.with(getContext()).load(foodImage).into(binding.food);
-                        }
-                        if(!architectureImage.isEmpty()){
-                            Glide.with(getContext()).load(architectureImage).into(binding.architecture);
-                        }
-                        if(!otherImage.isEmpty()){
-                            Glide.with(getContext()).load(otherImage).into(binding.other);
-                        }
-                        if(!animalsImage.isEmpty()){
-                            Glide.with(getContext()).load(animalsImage).into(binding.animals);
-                        }
-                        if(!lifestyleImage.isEmpty()){
-                            Glide.with(getContext()).load(lifestyleImage).into(binding.lifestyle);
-                        }
-                        if(!profileImage.isEmpty()){
-                            Glide.with(getContext()).load(profileImage).into(binding.profileImageView);
-                        }
-                        binding.login.setText(login);
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
